@@ -13,6 +13,10 @@ public class Utill {
     public static final String POPUP_USER = "rerere";
     public static final String POPUP_PASS = "rerere";
 
+    // Valid login and password to website
+    public static final String USER_NAME = "XXX";
+    public static final String PASSWORD = "XXX";
+
 // firefox path
     public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\gec15\\geckodriver.exe";
     public static final String geckodriver = "webdriver.gecko.driver";

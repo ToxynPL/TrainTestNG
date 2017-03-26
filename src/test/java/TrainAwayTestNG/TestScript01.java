@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -20,6 +22,30 @@ public class TestScript01 {
     public static String baseUrl;
 //test
 
+/**
+    @DataProvider(name = "Test")
+    public Object[][] testData(){
+
+        Object[][] data = new Object[4][2];
+
+        //1st row
+        data[0][0] = Utill.USER_NAME;
+        data[0][1] = Utill.PASSWORD;
+
+        //1st row
+        data[1][0] = "invalid";
+        data[1][1] = Utill.PASSWORD;
+
+        //1st row
+        data[2][0] = Utill.USER_NAME;
+        data[2][1] = "invalid";
+
+        //1st row
+        data[3][0] = "invalid";
+        data[3][1] = "invalid";
+
+    }
+    **/
     @BeforeMethod
     public void setUp() throws Exception {
 
@@ -36,16 +62,32 @@ public class TestScript01 {
         Alert alertOK = driver.switchTo().alert();
         alertOK.accept();
 
+        driver.manage().window().maximize();
 
     }
     WebDriver getDriver(){
         return driver;
     }
 
-    @Test
-    public void testCase01(){
+   /** @AfterMethod
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+**/
+    @Test//(dataProvider = "Test")
+    public void testCase01() throws Exception {
 
-        getDriver().findElement(By.name("SIGN IN")).click();
+
+
+// tu nie wiem co wpisac bo nie moglem znalesc
+        getDriver().switchTo().frame();
+
+
+
+
+
+
+
 
 
 
