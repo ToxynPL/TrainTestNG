@@ -35,11 +35,17 @@ public class TestScript01 {
 
         Alert alertOK = driver.switchTo().alert();
         alertOK.accept();
+
+
     }
+    WebDriver getDriver(){
+        return driver;
+    }
+
     @Test
     public void testCase01(){
 
-        driver.findElement(By.name("SIGN IN")).click();
+        getDriver().findElement(By.name("SIGN IN")).click();
 
 
 
