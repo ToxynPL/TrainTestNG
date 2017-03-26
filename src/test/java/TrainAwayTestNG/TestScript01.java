@@ -7,7 +7,10 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
+
+import static TrainAwayTestNG.Utill.profilepath;
 
 /**
  * Created by Krzysztof on 2017-03-26.
@@ -24,7 +27,8 @@ public class TestScript01 {
     String geckodriver = Utill.geckodriver;
     System.setProperty(geckodriver,firefox);
 
-        FirefoxProfile firefoxProfile = new FirefoxProfile();
+
+        FirefoxProfile firefoxProfile = new FirefoxProfile(new File(profilepath));
         driver = new FirefoxDriver(firefoxProfile);
 
         baseUrl = Utill.BASE_URL;
@@ -32,10 +36,15 @@ public class TestScript01 {
         driver.get(baseUrl);
 
     }
+//jest to po to ze jak np. masz jakies inne przegladarki albo inne karty to sie selenium nie zgubi
+    WebDriver getDriver(){
+        return driver;
+    }
+
     @Test
     public void testCase01(){
 
-        driver.findElement(By.name("SIGN IN")).click();
+        getDriver().findElement(By.name("SIGN IN")).click();
 
 
 

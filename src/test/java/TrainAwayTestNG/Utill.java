@@ -20,4 +20,10 @@ public class Utill {
     // Time to wait when searching
     public static final int WaitTime =30;
 
+    /**
+     * Selenium zawsze przy starcie tworzy nowy profile,
+     * wchodzisz w firefox -> opcje ->znak zapytania ->trouble shooting information->open folder -> i kopjujesz zawarosc
+     */
+    static String profilepath ="C:\\Users\\Pawl\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\w60lpw8m.default";
+
 }
