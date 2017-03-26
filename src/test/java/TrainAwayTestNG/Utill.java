@@ -14,7 +14,7 @@ public class Utill {
     public static final String POPUP_PASS = "rerere";
 
 // firefox path
-    public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\geckodriver.exe";
+    public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\gec15\\geckodriver.exe";
     public static final String geckodriver = "webdriver.gecko.driver";
 
     // Time to wait when searching
