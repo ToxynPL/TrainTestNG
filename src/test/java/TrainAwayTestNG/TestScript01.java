@@ -1,5 +1,6 @@
 package TrainAwayTestNG;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -32,6 +33,8 @@ public class TestScript01 {
         driver.manage().timeouts().implicitlyWait(Utill.WaitTime, TimeUnit.SECONDS);
         driver.get(baseUrl);
 
+        Alert alertOK = driver.switchTo().alert();
+        alertOK.accept();
     }
     @Test
     public void testCase01(){

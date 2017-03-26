@@ -6,7 +6,7 @@ package TrainAwayTestNG;
 
 public class Utill {
 
-    //Valid web page URL
+    //Valid web page URL and pop up login and pass
     public static final String BASE_URL = "http://rerere:rerere@trainaway.kitmedia.pl";
 
     // Valid pop up login and password
