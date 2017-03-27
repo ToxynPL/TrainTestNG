@@ -13,13 +13,17 @@ public class Utill {
     public static final String POPUP_USER = "rerere";
     public static final String POPUP_PASS = "rerere";
 
+    // Expected error value
+    public static final String EXPECTED_ERROR_EMAIL = "Email not valid!";
+    public static final String EXPECTED_ERROR_PASS = "Wrong password";
+
     // Valid login and password to website
-    public static final String USER_NAME = "XXX";
-    public static final String PASSWORD = "XXX";
+    public static final String USER_NAME = "krzysztof.pyz@ready4s.pl";
+    public static final String PASSWORD = "Kawaleria1313";
 
 // firefox path
-//    public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\gec15\\geckodriver.exe";
-    public static final String firefox = "C:\\Users\\Pawl\\Desktop\\driver\\geckodriver.exe"; //pawel
+    public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\gec15\\geckodriver.exe";
+   // public static final String firefox = "C:\\Users\\Pawl\\Desktop\\driver\\geckodriver.exe"; //pawel
     public static final String geckodriver = "webdriver.gecko.driver";
 
     // Time to wait when searching
