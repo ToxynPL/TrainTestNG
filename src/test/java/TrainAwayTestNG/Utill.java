@@ -17,7 +17,11 @@ public class Utill {
     public static final String EXPECTED_ERROR_EMAIL = "Email not valid!";
     public static final String EXPECTED_ERROR_PASS = "Wrong password";
 
-    // Valid login and password to website
+    //FB valid login and password
+    public static final String FBemail = "krzysztof.pyz@ready4s.pl";
+    public static final String FBpass = "Kawaleria1313";
+
+    // Valid login and password to the website
     public static final String USER_NAME = "krzysztof.pyz@ready4s.pl";
     public static final String PASSWORD = "Kawaleria1313";
 

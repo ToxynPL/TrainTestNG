@@ -97,6 +97,9 @@ public class TestScript01 {
 
         // Click login
         getDriver().findElement(By.xpath("/html/body/div[2]/div/div[1]/div/div/div/div[3]/form/div[3]/button")).click();
+
+
+
 /**
         try{
 
@@ -112,6 +115,45 @@ public class TestScript01 {
 
 
 **/
+
+
+
+    }
+
+    @Test
+    public void SignInFb()  {
+
+
+
+        getDriver().switchTo().defaultContent();
+
+        getDriver().findElement(By.xpath("/html/body/header/div[1]/div/div/div[3]/div[2]/div/a[2]")).click();
+
+        getDriver().switchTo().defaultContent();
+
+       // String handle = getDriver().getWindowHandle();
+
+        // Fb click
+        getDriver().findElement(By.cssSelector("html.ng-scope body div.ng-scope div.ng-scope div.sign-bg.ng-scope div.sign-content div.sign-content__inner div.container div.block-sign div.col-sm-6.sign-link-wrapper a.sign-link.facebook")).click();
+       // String currentWindow = getDriver().getTitle();
+
+
+
+        for(String winHandle : getDriver().getWindowHandles()){
+            getDriver().switchTo().window(winHandle);
+        }
+        getDriver().manage().window().maximize();
+        getDriver().findElement(By.id("email")).sendKeys(Utill.FBemail);
+        getDriver().findElement(By.id("pass")).sendKeys(Utill.FBpass);
+        getDriver().findElement(By.id("u_0_2")).click();
+
+
+      //  getDriver().switchTo().window(handle);
+
+       // getDriver().switchTo().window(handle);
+
+
+
 
 
 
