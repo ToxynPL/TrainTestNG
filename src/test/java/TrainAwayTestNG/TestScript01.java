@@ -123,7 +123,7 @@ public class TestScript01 {
     }
 
     @Test
-    public void SignInFb()  {
+    public void SignInFb() throws Exception {
 
 
 
@@ -139,8 +139,10 @@ public class TestScript01 {
         getDriver().findElement(By.cssSelector("html.ng-scope body div.ng-scope div.ng-scope div.sign-bg.ng-scope div.sign-content div.sign-content__inner div.container div.block-sign div.col-sm-6.sign-link-wrapper a.sign-link.facebook")).click();
        // String currentWindow = getDriver().getTitle();
 
+        Thread.sleep(2000);
 
         List<String>window = new ArrayList<String>(getDriver().getWindowHandles());
+        System.out.println("size "+window.size());
         getDriver().switchTo().window(window.get(1));
         System.out.println("switching to the other window");
 
@@ -163,5 +165,9 @@ public class TestScript01 {
 
 
 
+    }
+    @AfterMethod
+    public void tearDown(){
+        getDriver().close();
     }
 }
