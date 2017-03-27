@@ -14,6 +14,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -138,16 +140,20 @@ public class TestScript01 {
        // String currentWindow = getDriver().getTitle();
 
 
+        List<String>window = new ArrayList<String>(getDriver().getWindowHandles());
+        getDriver().switchTo().window(window.get(1));
+        System.out.println("switching to the other window");
 
-        for(String winHandle : getDriver().getWindowHandles()){
-            getDriver().switchTo().window(winHandle);
-        }
+
         getDriver().manage().window().maximize();
         getDriver().findElement(By.id("email")).sendKeys(Utill.FBemail);
         getDriver().findElement(By.id("pass")).sendKeys(Utill.FBpass);
         getDriver().findElement(By.id("u_0_2")).click();
+        System.out.println("closing the window");
+        getDriver().close();
 
-
+        System.out.println("switchig to parent window");
+        getDriver().switchTo().window(window.get(0));
       //  getDriver().switchTo().window(handle);
 
        // getDriver().switchTo().window(handle);
