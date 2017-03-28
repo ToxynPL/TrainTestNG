@@ -25,6 +25,13 @@ public class Utill {
     public static final String USER_NAME = "krzysztof.pyz@ready4s.pl";
     public static final String PASSWORD = "Kawaleria1313";
 
+    //Google valid email and password
+    public static final String Gmail = "krzysztof.pyz.ready4s.pl";
+    public static final String Gpass = "Kawaleria1515";
+
+    //Forgot password email
+    public static final String Fpass = "";
+
 // firefox path
     public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\gec15\\geckodriver.exe";
    // public static final String firefox = "C:\\Users\\Pawl\\Desktop\\driver\\geckodriver.exe"; //pawel

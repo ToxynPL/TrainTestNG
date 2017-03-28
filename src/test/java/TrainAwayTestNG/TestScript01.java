@@ -123,7 +123,7 @@ public class TestScript01 {
     }
 
     @Test
-    public void SignInFb() throws Exception {
+    public void SignInFb() throws Exception  {
 
 
 
@@ -150,22 +150,78 @@ public class TestScript01 {
         getDriver().manage().window().maximize();
         getDriver().findElement(By.id("email")).sendKeys(Utill.FBemail);
         getDriver().findElement(By.id("pass")).sendKeys(Utill.FBpass);
-        getDriver().findElement(By.id("u_0_2")).click();
+        getDriver().findElement(By.cssSelector("html#facebook body.login_page.booklet.gecko.win.x1.Locale_en_US div#booklet div#content.fb_content.clearfix div.login_form_container form#login_form div#loginform div#buttons.form_row.clearfix label#loginbutton.uiButton.uiButtonConfirm.uiButtonLarge input#u_0_2")).click();
+        Thread.sleep(5000);
+
         System.out.println("closing the window");
-        getDriver().close();
+        //getDriver().close();
 
         System.out.println("switchig to parent window");
         getDriver().switchTo().window(window.get(0));
       //  getDriver().switchTo().window(handle);
 
        // getDriver().switchTo().window(handle);
+    }
 
+    @Test
+    public void SignInGp() throws Exception {
+
+        //SignIn click
+        getDriver().switchTo().defaultContent();
+        getDriver().findElement(By.xpath("/html/body/header/div[1]/div/div/div[3]/div[2]/div/a[2]")).click();
+        getDriver().switchTo().defaultContent();
+
+        //Google signin
+        getDriver().findElement(By.cssSelector("html.ng-scope body div.ng-scope div.ng-scope div.sign-bg.ng-scope div.sign-content div.sign-content__inner div.container div.block-sign div.col-sm-6.sign-link-wrapper a.sign-link.google")).click();
+        Thread.sleep(2000);
+
+        List<String>window = new ArrayList<String>(getDriver().getWindowHandles());
+        System.out.println("size "+window.size());
+        getDriver().switchTo().window(window.get(1));
+        System.out.println("switching to the other window");
+
+        getDriver().manage().window().maximize();
+        getDriver().findElement(By.id("Email")).sendKeys(Utill.Gmail);
+        getDriver().findElement(By.id("next")).click();
+        Thread.sleep(2000);
+        getDriver().findElement(By.id("Passwd")).sendKeys(Utill.Gpass);
+        getDriver().findElement(By.id("signIn")).click();
+        Thread.sleep(5000);
+        System.out.println("closing the window");
+
+        System.out.println("switchig to parent window");
+        getDriver().switchTo().window(window.get(0));
+
+    }
+    @Test
+    public void ForgotPass() throws Exception {
+
+        getDriver().switchTo().defaultContent();
+        getDriver().findElement(By.xpath("/html/body/header/div[1]/div/div/div[3]/div[2]/div/a[2]")).click();
+        getDriver().switchTo().defaultContent();
+
+        getDriver().findElement(By.className("btn-popup")).click();
+        getDriver().findElement(By.name("forgotEmail")).sendKeys(Utill.Fpass);
+
+    }
+
+    @Test
+    public void Register() throws Exception {
+
+        getDriver().switchTo().defaultContent();
+        getDriver().findElement(By.cssSelector("html.ng-scope body header.header div.header-inner div.container div.row.flex-sm div.col-xs-12.col-sm-5.col-md-4.flex-sm-2.nav-header div.nav-header__item.text-right.ng-scope div.group-btn.header-buttons a")).click();
+        getDriver().switchTo().defaultContent();
+        Thread.sleep(2000);
+
+        getDriver().findElement(By.cssSelector("html.ng-scope body div.ng-scope div.ng-scope div.registration.ng-scope div.registration__buttons div.choice-block-wrapper div.choice-block div.choice-block__item div.choice-block__image a.btn.btn-registration._bg1")).click();
 
 
 
 
 
     }
+
+
     @AfterMethod
     public void tearDown(){
         getDriver().close();
