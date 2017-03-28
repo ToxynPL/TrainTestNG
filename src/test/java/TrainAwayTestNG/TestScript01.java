@@ -266,6 +266,8 @@ public class TestScript01 {
         getDriver().findElement(By.name("forgotEmail")).sendKeys(Utill.Fpass);
         getDriver().findElement(By.className("btn")).click();
         System.out.println("Email has been sent");
+        //do usuniecia
+        System.out.println("Email has been sent");
 
     }
 
