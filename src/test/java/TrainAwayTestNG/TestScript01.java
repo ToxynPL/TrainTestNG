@@ -1,9 +1,7 @@
 package TrainAwayTestNG;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -15,6 +13,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -100,23 +99,34 @@ public class TestScript01 {
         // Click login
         getDriver().findElement(By.xpath("/html/body/div[2]/div/div[1]/div/div/div/div[3]/form/div[3]/button")).click();
 
+        Thread.sleep(5000);
 
 
-/**
         try{
 
-            actualBoxMsg = getDriver().findElement(By.xpath("/x:html/x:body/x:div[2]/x:div/x:div[1]/x:div/x:div/x:div/x:div[3]/x:form/x:div[2]/x:span[1]/x:span")).getText();
+            getDriver().switchTo().defaultContent();
+            actualBoxMsg = getDriver().findElement(By.cssSelector("html.ng-scope body header.header div.header-inner div.container div.row.flex-sm div.col-xs-12.col-sm-5.col-md-4.flex-sm-2.nav-header div.nav-header__item.profile.text-right.ng-scope span.profile__text.ng-binding")).getText();
 
-            Assert.assertEquals(actualBoxMsg,Utill.EXPECTED_ERROR_EMAIL );
+            Assert.assertEquals(actualBoxMsg,Utill.Profile);
         }
 
-        catch (NoAlertPresentException Ex){
+        catch (NoSuchElementException Ex){
 
-                System.out.println("cos zle poszlo");
+            Calendar calendar = Calendar.getInstance();
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            int minute = calendar.get(Calendar.MINUTE);
+            int sec = calendar.get(Calendar.SECOND);
+            int mil = calendar.get(Calendar.MILLISECOND);
+
+
+            File scrFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\tmp\\screenshoot"+ hour + minute + sec + mil +".png"));
+            System.out.println("An error message has been catch and it's stored in tmp folder on the desktop");
+
         }
 
 
-**/
+
 
 
 
@@ -125,7 +135,7 @@ public class TestScript01 {
     @Test
     public void SignInFb() throws Exception  {
 
-
+        String actualBoxMsg;
 
         getDriver().switchTo().defaultContent();
 
@@ -161,10 +171,37 @@ public class TestScript01 {
       //  getDriver().switchTo().window(handle);
 
        // getDriver().switchTo().window(handle);
+
+
+        try{
+
+            getDriver().switchTo().defaultContent();
+            actualBoxMsg = getDriver().findElement(By.cssSelector("html.ng-scope body header.header div.header-inner div.container div.row.flex-sm div.col-xs-12.col-sm-5.col-md-4.flex-sm-2.nav-header div.nav-header__item.profile.text-right.ng-scope span.profile__text.ng-binding")).getText();
+
+            Assert.assertEquals(actualBoxMsg,Utill.Profile);
+        }
+
+        catch (NoSuchElementException Ex){
+
+            Calendar calendar = Calendar.getInstance();
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            int minute = calendar.get(Calendar.MINUTE);
+            int sec = calendar.get(Calendar.SECOND);
+            int mil = calendar.get(Calendar.MILLISECOND);
+
+
+            File scrFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\tmp\\screenshoot"+ hour + minute + sec + mil +".png"));
+            System.out.println("An error message has been catch and it's stored in tmp folder on the desktop");
+
+        }
+
     }
 
     @Test
     public void SignInGp() throws Exception {
+
+        String actualBoxMsg;
 
         //SignIn click
         getDriver().switchTo().defaultContent();
@@ -192,6 +229,30 @@ public class TestScript01 {
         System.out.println("switchig to parent window");
         getDriver().switchTo().window(window.get(0));
 
+
+        try{
+
+            getDriver().switchTo().defaultContent();
+            actualBoxMsg = getDriver().findElement(By.cssSelector("html.ng-scope body header.header div.header-inner div.container div.row.flex-sm div.col-xs-12.col-sm-5.col-md-4.flex-sm-2.nav-header div.nav-header__item.profile.text-right.ng-scope span.profile__text.ng-binding")).getText();
+
+            Assert.assertEquals(actualBoxMsg,Utill.Profile);
+        }
+
+        catch (NoSuchElementException Ex){
+
+            Calendar calendar = Calendar.getInstance();
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            int minute = calendar.get(Calendar.MINUTE);
+            int sec = calendar.get(Calendar.SECOND);
+            int mil = calendar.get(Calendar.MILLISECOND);
+
+
+            File scrFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\tmp\\screenshoot"+ hour + minute + sec + mil +".png"));
+            System.out.println("An error message has been catch and it's stored in tmp folder on the desktop");
+
+        }
+
     }
     @Test
     public void ForgotPass() throws Exception {
@@ -201,7 +262,10 @@ public class TestScript01 {
         getDriver().switchTo().defaultContent();
 
         getDriver().findElement(By.className("btn-popup")).click();
+        Thread.sleep(2000);
         getDriver().findElement(By.name("forgotEmail")).sendKeys(Utill.Fpass);
+        getDriver().findElement(By.className("btn")).click();
+        System.out.println("Email has been sent");
 
     }
 
@@ -214,6 +278,9 @@ public class TestScript01 {
         Thread.sleep(2000);
 
         getDriver().findElement(By.cssSelector("html.ng-scope body div.ng-scope div.ng-scope div.registration.ng-scope div.registration__buttons div.choice-block-wrapper div.choice-block div.choice-block__item div.choice-block__image a.btn.btn-registration._bg1")).click();
+
+        getDriver().findElement(By.name("firstName")).sendKeys();
+
 
 
 

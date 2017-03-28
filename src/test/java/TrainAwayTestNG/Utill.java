@@ -16,6 +16,7 @@ public class Utill {
     // Expected error value
     public static final String EXPECTED_ERROR_EMAIL = "Email not valid!";
     public static final String EXPECTED_ERROR_PASS = "Wrong password";
+    public static final String Profile = "Krzysztof Pyz";
 
     //FB valid login and password
     public static final String FBemail = "krzysztof.pyz@ready4s.pl";
@@ -30,7 +31,9 @@ public class Utill {
     public static final String Gpass = "Kawaleria1515";
 
     //Forgot password email
-    public static final String Fpass = "";
+    public static final String Fpass = "test@test.pl";
+
+
 
 // firefox path
     public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\gec15\\geckodriver.exe";
