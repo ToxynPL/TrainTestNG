@@ -16,7 +16,9 @@ public class Utill {
     // Expected error value
     public static final String EXPECTED_ERROR_EMAIL = "Email not valid!";
     public static final String EXPECTED_ERROR_PASS = "Wrong password";
-    public static final String Profile = "Krzysztof Pyz";
+    public static final String Name = "Krzysztof";
+    public static final String Surname = "Pyz";
+    public static final String Profile = Name + " " + Surname;
 
     //FB valid login and password
     public static final String FBemail = "krzysztof.pyz@ready4s.pl";
@@ -33,14 +35,23 @@ public class Utill {
     //Forgot password email
     public static final String Fpass = "test@test.pl";
 
+
+
 // firefox path
     public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\gec15\\geckodriver.exe";
    // public static final String firefox = "C:\\Users\\Pawl\\Desktop\\driver\\geckodriver.exe"; //pawel
     public static final String geckodriver = "webdriver.gecko.driver";
 
+    // chrome path
+    public static final String chrome = "C:\\Users\\Krzysztof\\Desktop\\gec15\\chromedriver.exe";
+    public static final String chromedriver = "webdriver.chrome.driver";
+
+    //IE path
+    public static final String IE = "C:\\Users\\Krzysztof\\Desktop\\gec15\\IEDriverServer.exe";
+    public static final String IEdriver = "webdriver.ie.driver";
+
     // Time to wait when searching
     public static final int WaitTime =30;
-
     /**
      * Selenium zawsze przy starcie tworzy nowy profile,
      * wchodzisz w firefox -> opcje ->znak zapytania ->trouble shooting information->open folder -> i kopjujesz zawarosc

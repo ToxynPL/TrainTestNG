@@ -54,7 +54,7 @@ public class TestScript01 {
     @Parameters({ "browser" })
 
     @BeforeMethod
-    public void setUp(@Optional ("chrome") String browser) throws Exception {
+    public void setUp(@Optional ("firefox") String browser) throws Exception {
 
         if (browser.equalsIgnoreCase("firefox")){
 
@@ -76,9 +76,9 @@ public class TestScript01 {
 
         else if (browser.equalsIgnoreCase("IE")) {
 
-            String IE = Utill.IE;
-            String IEdriver = Utill.IEdriver;
-            System.setProperty(IE, IEdriver);
+            String chrome = Utill.IE;
+            String chromedriver = Utill.IEdriver;
+            System.setProperty(chromedriver,chrome);
 
 
             driver = new InternetExplorerDriver();
@@ -260,7 +260,7 @@ public class TestScript01 {
         getDriver().findElement(By.className("btn")).click();
         System.out.println("Email has been sent");
         //do usuniecia
-
+        System.out.println("Email has been sent");
     }
 
     @Test

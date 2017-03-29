@@ -28,4 +28,11 @@
         </classes>
     </test>
 
+    <test name="IeTest">
+        <parameter name="browser" value="IE" />
+        <classes>
+            <class name="TrainAwayTestNG.TestScript01" />
+        </classes>
+    </test>
+
 </suite>
