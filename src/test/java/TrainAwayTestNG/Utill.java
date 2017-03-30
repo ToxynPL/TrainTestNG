@@ -33,8 +33,6 @@ public class Utill {
     //Forgot password email
     public static final String Fpass = "test@test.pl";
 
-
-
 // firefox path
     public static final String firefox = "C:\\Users\\Krzysztof\\Desktop\\gec15\\geckodriver.exe";
    // public static final String firefox = "C:\\Users\\Pawl\\Desktop\\driver\\geckodriver.exe"; //pawel

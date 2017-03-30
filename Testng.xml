@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="example suite 1" verbose="1" >
-    <test name="Regression suite 1" >
+
+
+
+<suite name="Trainaway Test" verbose="1"  parallel="none" > //or "tests" in parallel
+
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox" />
         <classes>
-            <class name="TrainAwayTestNG.TestScript01"/>
+            <class name="TrainAwayTestNG.TestScript01" />
+            <class name="TrainAwayTestNG.TestScript02" />
+        </classes>
+    </test>
+
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="TrainAwayTestNG.TestScript01" />
+            <class name="TrainAwayTestNG.TestScript02" />
 
         </classes>
     </test>
+
+    <test name="IeTest">
+        <parameter name="browser" value="IE" />
+        <classes>
+            <class name="TrainAwayTestNG.TestScript01" />
+        </classes>
+    </test>
+
 </suite>
