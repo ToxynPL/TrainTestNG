@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-
-
-<suite name="Trainaway Test" verbose="1"  parallel="none" > //or "tests" in parallel
-
+<suite name="ok" verbose="1">
     <test name="FirefoxTest">
         <parameter name="browser" value="firefox" />
         <classes>
@@ -28,11 +26,6 @@
         </classes>
     </test>
 
-    <test name="IeTest">
-        <parameter name="browser" value="IE" />
-        <classes>
-            <class name="TrainAwayTestNG.TestScript01" />
-        </classes>
-    </test>
-
 </suite>
+
+
