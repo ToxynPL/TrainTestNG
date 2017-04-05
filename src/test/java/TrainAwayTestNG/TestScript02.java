@@ -3,7 +3,9 @@ package TrainAwayTestNG;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.BeforeMethod;
@@ -35,16 +37,18 @@ public class TestScript02 {
         } else if (browser.equalsIgnoreCase("chrome")) {
 
             String chrome = Utill.chrome;
-            String chromedriver = Utill.chromedriver;
-            System.setProperty(chromedriver, chrome);
+            String chromeDriver = Utill.chromedriver;
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized");
+            System.setProperty(chromeDriver, chrome);
 
 
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("IE")) {
 
             String IE = Utill.IE;
-            String IEdriver = Utill.IEdriver;
-            System.setProperty(IEdriver, IE);
+            String IeDriver = Utill.IEdriver;
+            System.setProperty(IeDriver, IE);
 
 
             driver = new InternetExplorerDriver();
@@ -59,23 +63,27 @@ public class TestScript02 {
         if (browser.equalsIgnoreCase("firefox")) {
             Alert alertOK = driver.switchTo().alert();
             alertOK.accept();
+            driver.manage().window().maximize();
         }
 
-        driver.manage().window().maximize();
+
+  //   driver.manage().window().maximize();
 
     }
 
     WebDriver getDriver(){
+
         return driver;
     }
+
 
     @Test
     public void chromeCheck() throws Exception {
 
 
+
         getDriver().switchTo().defaultContent();
         getDriver().findElement(By.xpath("/html/body/header/div[1]/div/div/div[3]/div[2]/div/a[2]")).click();
-        System.out.println("Udało się?");
-    }
-
+        getDriver().switchTo().defaultContent();
+}
 }

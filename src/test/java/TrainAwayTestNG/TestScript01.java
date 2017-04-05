@@ -68,17 +68,19 @@ public class TestScript01 {
 
             String chrome = Utill.chrome;
             String chromedriver = Utill.chromedriver;
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized");
             System.setProperty(chromedriver,chrome);
 
 
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
         }
 
         else if (browser.equalsIgnoreCase("IE")) {
 
-            String chrome = Utill.IE;
-            String chromedriver = Utill.IEdriver;
-            System.setProperty(chromedriver,chrome);
+            String IE = Utill.IE;
+            String IeDriver = Utill.IEdriver;
+            System.setProperty(IeDriver,IE);
 
 
             driver = new InternetExplorerDriver();
@@ -88,8 +90,11 @@ public class TestScript01 {
         driver.manage().timeouts().implicitlyWait(Utill.WaitTime, TimeUnit.SECONDS);
         driver.get(baseUrl);
 
-        Alert alertOK = driver.switchTo().alert();
-        alertOK.accept();
+        if (browser.equalsIgnoreCase("firefox")) {
+            Alert alertOK = driver.switchTo().alert();
+            alertOK.accept();
+        }
+
 
         driver.manage().window().maximize();
 
@@ -98,6 +103,8 @@ public class TestScript01 {
     WebDriver getDriver(){
         return driver;
     }
+
+
 
     @Test(dataProvider = "Test")
     public void SignIn(String username, String password) throws Exception {

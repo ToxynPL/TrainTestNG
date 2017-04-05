@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="ok" verbose="1">
+<suite name="Trainaway Test" verbose="1"  >
+
     <test name="FirefoxTest">
         <parameter name="browser" value="firefox" />
         <classes>
             <class name="TrainAwayTestNG.TestScript01" />
-            <class name="TrainAwayTestNG.TestScript02" />
+            <!--<class name="TrainAwayTestNG.TestScript02" />-->
         </classes>
     </test>
 
@@ -14,7 +16,7 @@
         <parameter name="browser" value="chrome" />
         <classes>
             <class name="TrainAwayTestNG.TestScript01" />
-            <class name="TrainAwayTestNG.TestScript02" />
+            <!--<class name="TrainAwayTestNG.TestScript02" />-->
 
         </classes>
     </test>
@@ -26,6 +28,5 @@
         </classes>
     </test>
 
+
 </suite>
-
-

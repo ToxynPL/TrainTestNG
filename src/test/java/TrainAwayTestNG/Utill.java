@@ -9,9 +9,6 @@ public class Utill {
     //Valid web page URL and pop up login and pass
     public static final String BASE_URL = "http://rerere:rerere@trainaway.kitmedia.pl";
 
-    // Valid pop up login and password
-    public static final String POPUP_USER = "rerere";
-    public static final String POPUP_PASS = "rerere";
 
     // Expected error value
     public static final String EXPECTED_ERROR_EMAIL = "Email not valid!";
@@ -51,11 +48,16 @@ public class Utill {
     public static final String IEdriver = "webdriver.ie.driver";
 
     // Time to wait when searching
-    public static final int WaitTime =30;
+    public static final int WaitTime = 20;
     /**
      * Selenium zawsze przy starcie tworzy nowy profile,
      * wchodzisz w firefox -> opcje ->znak zapytania ->trouble shooting information->open folder -> i kopjujesz zawarosc
      */
     static String profilepath ="C:\\Users\\Pawl\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\w60lpw8m.default";
 
+
+
+
+
 }
+
