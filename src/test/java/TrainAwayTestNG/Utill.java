@@ -47,7 +47,7 @@ public class Utill {
     public static final String IE = "C:\\Users\\Krzysztof\\Desktop\\gec15\\IEDriverServer.exe";
     public static final String IEdriver = "webdriver.ie.driver";
 
-    // Time to wait when searching
+    // Time to wait while searching
     public static final int WaitTime = 20;
     /**
      * Selenium zawsze przy starcie tworzy nowy profile,
